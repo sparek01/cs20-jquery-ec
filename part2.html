@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <style type="text/css"></style>
+    </head>
+
+    <body>    
+        <input type="checkbox" value="" id="uncheck"/>
+        <label for="uncheck" id="uncheckLabel">Check All</label> <br><br>
+
+        <input type="checkbox" value="" id="first" /> First <br>
+        <input type="checkbox" value="" id="second" /> Second <br>
+        <input type="checkbox" value="" id="third" /> Third <br>
+        <input type="checkbox" value="" id="fourth" /> Fourth <br>
+
+        <script>
+            $(document).ready (function() {
+
+                $('#uncheck').click (function() {
+                    
+                    if ($("#uncheck").is(":checked")) {
+                        $('#uncheckLabel').text("Uncheck All");
+                        $('#first, #second, #third, #fourth').prop('checked', true);
+                    } else {
+                        $('#uncheckLabel').text("Check All");
+                        $('#first, #second, #third, #fourth').prop('checked', false);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
